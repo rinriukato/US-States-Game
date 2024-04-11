@@ -37,11 +37,7 @@ while states_correct != 50:
 
 
 all_states = states["state"].tolist()
-missing_states = []
-
-for state in all_states:
-    if state not in guessed_states:
-        missing_states.append(state)
+missing_states = [state for state in all_states if state not in guessed_states]
 
 state_dict = {
     "Missing States": missing_states
